@@ -39,7 +39,7 @@ public class GuestAdapter extends RecyclerView.Adapter<GuestAdapter.ViewHolder> 
         return guestNumber;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {//implements View.OnClickListener
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         EditText guestName, gender;
         public ViewHolder(@NonNull View itemView) {

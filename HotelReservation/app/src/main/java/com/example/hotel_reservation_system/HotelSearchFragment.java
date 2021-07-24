@@ -22,7 +22,7 @@ import java.util.Calendar;
 
 public class HotelSearchFragment extends Fragment {
 
-    // These are the global variables
+
     View view;
     ConstraintLayout mainLayout;
     TextView titleTextView, searchTextConfirmationTextView;
@@ -32,7 +32,6 @@ public class HotelSearchFragment extends Fragment {
     String checkInDate, checkOutDate, numberOfGuests, guestName;
 
 
-   // Declaration of shared preferences keys
     SharedPreferences sharedPreferences;
     public static final String myPreference = "myPref";
     public static final String name = "nameKey";
@@ -41,7 +40,6 @@ public class HotelSearchFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.hotel_search_layout, container, false);
         return view;
     }
