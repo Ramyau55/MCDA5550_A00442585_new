@@ -116,17 +116,6 @@
                 android:textAlignment="textStart"
                 android:gravity="start" />
 
-            <EditText
-                android:id="@+id/name_edit_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/name_text_view"
-                app:layout_constraintTop_toTopOf="@id/name_text_view"
-                app:layout_constraintBottom_toBottomOf="@id/name_text_view"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:hint="Your Name" />
-
-
             <TextView
                 android:id="@+id/search_confirm_text_view"
                 android:layout_width="wrap_content"

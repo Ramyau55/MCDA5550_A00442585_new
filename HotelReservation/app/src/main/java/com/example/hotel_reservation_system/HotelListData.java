@@ -16,23 +16,11 @@ public class HotelListData {
         return hotel_name;
     }
 
-    public void setHotel_name(String hotel_name) {
-        this.hotel_name = hotel_name;
-    }
-
     public String getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
     public String getAvailability() {
         return availability;
-    }
-
-    public void setAvailability(String availability) {
-        this.availability = availability;
     }
 }

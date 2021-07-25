@@ -54,7 +54,7 @@ public class HotelsListFragment extends Fragment implements ItemClickListener {
                 " to " + checkOutDate);
 
 
-        // Set up the RecyclerView
+        // Set up the RecyclerView+
 //        ArrayList<HotelListData> hotelListData = initHotelListData();
 //        RecyclerView recyclerView = view.findViewById(R.id.hotel_list_recyclerView);
 //        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

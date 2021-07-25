@@ -20,7 +20,6 @@ public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.View
     private LayoutInflater layoutInflater;
     private ItemClickListener clickListener;
 
-    //Data gets passed in the constructor
     HotelListAdapter(Context context, List<HotelListData> hotelListData) {
         this.layoutInflater = LayoutInflater.from(context);
         this.hotelListData = hotelListData;
@@ -38,8 +37,6 @@ public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.View
         String hotelName = hotelListData.get(position).getHotel_name();
         String hotelPrice = hotelListData.get(position).getPrice();
         String hotelAvailability = hotelListData.get(position).getAvailability();
-
-        // set up the text
         holder.hotelName.setText(hotelName);
         holder.hotelAvailability.setText(hotelAvailability);
         holder.hotelPrice.setText(hotelPrice);
@@ -54,11 +51,9 @@ public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.View
         }
     }
 
-
     public void setClickListener(ItemClickListener itemClickListener) {
         this.clickListener = itemClickListener;
     }
-
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
@@ -73,6 +68,7 @@ public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.View
             itemView.setOnClickListener(this);
 
         }
+
         @Override
         public void onClick(View view) {
             if (clickListener != null)

@@ -39,18 +39,19 @@ public class HotelGuestDetailsFragment extends Fragment  {
 
     View view;
     SharedPreferences sharedPreferences;
-    public static final String myPreference = "myPref";
-    public static final String guestsCount = "guestsCount";
-    public static final String checkIn = "checkIn";
-    public static final String checkOut = "checkOut";
     RecyclerView recyclerView;
     String hotelName;
     LinearLayoutManager llm;
     Button send;
+    public static final String myPreference = "myPref";
+    public static final String guestsCount = "guestsCount";
+    public static final String checkIn = "checkIn";
+    public static final String checkOut = "checkOut";
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         view = inflater.inflate(R.layout.hotel_guest_details_fragment, container, false);
         return view;
     }
@@ -59,12 +60,25 @@ public class HotelGuestDetailsFragment extends Fragment  {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        TextView hotelRecapTextView = view.findViewById(R.id.hotel_recap_text_view);
+        TextView hotelRecapLabelTextView = view.findViewById(R.id.hotel_recap_hotel_label_text_view);
+        TextView hotelRecapValueTextView = view.findViewById(R.id.hotel_recap_hotel_value_text_view);
+        TextView hotelRecapPriceLabelTextView = view.findViewById(R.id.hotel_recap_price_label_text_view);
+        TextView hotelRecapPriceValueView = view.findViewById(R.id.hotel_recap_price_value_text_view);
+
+        TextView hotelRecapAvailabilityLabelTextView = view.findViewById(R.id.hotel_recap_availability_label_text_view);
+        TextView hotelRecapAvailabilityValueTextView = view.findViewById(R.id.hotel_recap_availability_value_text_view);
+
         send = view.findViewById(R.id.send);
         hotelName = getArguments().getString("hotel name");
         String hotelPrice = getArguments().getString("hotel price");
         String hotelAvailability = getArguments().getString("hotel availability");
-        hotelRecapTextView.setText("You have selected " +hotelName+ ". The cost will be $ "+hotelPrice+ " and availability is " +hotelAvailability);
+
+        hotelRecapLabelTextView.setText("Hotel Name:");
+        hotelRecapValueTextView.setText(hotelName);
+        hotelRecapPriceLabelTextView.setText("Price");
+        hotelRecapPriceValueView.setText(hotelPrice);
+        hotelRecapAvailabilityLabelTextView.setText("Availability");
+        hotelRecapAvailabilityValueTextView.setText(hotelAvailability);
         setupRecyclerView();
 
         send.setOnClickListener(new View.OnClickListener() {
@@ -133,7 +147,6 @@ public class HotelGuestDetailsFragment extends Fragment  {
 
                         @Override
                         public void failure(RetrofitError error) {
-                            // if error occurs in network transaction then we can get the error in this method.
                             Toast.makeText(getActivity(), error.toString(), Toast.LENGTH_LONG).show();
                         }
                     });
@@ -155,8 +168,6 @@ public class HotelGuestDetailsFragment extends Fragment  {
         recyclerView.setLayoutManager(llm);
         GuestAdapter guestAdapter=new GuestAdapter(getActivity(),guestNumber);
         recyclerView.setAdapter(guestAdapter);
-
-        //guestAdapter.setClickListener(this);
     }
 
 }

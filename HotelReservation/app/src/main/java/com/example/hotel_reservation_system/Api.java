@@ -6,13 +6,11 @@ public class Api {
 
     public static ApiInterface getClient() {
 
-        // change your base URL
         RestAdapter adapter = new RestAdapter.Builder()
                 .setEndpoint("http://hotelreservationonaws-env.eba-tifqwmf2.ca-central-1.elasticbeanstalk.com/") //Set the Root URL
-                .build(); //Finally building the adapter
+                .build();
 
-        //Creating object for our interface
         ApiInterface api = adapter.create(ApiInterface.class);
-        return api; // return the APIInterface object
+        return api;
     }
 }

@@ -20,11 +20,10 @@ public class GuestFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        String confirmationNumber = getArguments().getString("confirmation number");
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstance) {
+        super.onViewCreated(view, savedInstance);
+        String confirmation = getArguments().getString("confirmation number");
         TextView cNumber = view.findViewById(R.id.confirmation_number);
-        cNumber.setText("Your Confirmation Number is: "+confirmationNumber);
-
+        cNumber.setText("You have made the reservation!...Your Confirmation Number is: "+confirmation+" Please contact Customer support for any Queries");
     }
 }
