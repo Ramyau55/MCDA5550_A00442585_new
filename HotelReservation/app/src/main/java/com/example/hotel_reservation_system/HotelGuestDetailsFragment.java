@@ -106,7 +106,7 @@ public class HotelGuestDetailsFragment extends Fragment  {
                     if (sharedPreferences.contains(checkOut)) {
                         obj.put("checkout",sharedPreferences.getString(checkOut, ""));
                     }
-                    obj.put("guests_list",array);
+                    obj.put("guests",array);
                     in = new TypedByteArray("application/json", obj.toString().getBytes("UTF-8"));
 
                 } catch (JSONException e) {
