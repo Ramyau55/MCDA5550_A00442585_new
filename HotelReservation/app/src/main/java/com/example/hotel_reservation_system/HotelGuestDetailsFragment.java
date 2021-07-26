@@ -65,8 +65,11 @@ public class HotelGuestDetailsFragment extends Fragment  {
         TextView hotelRecapPriceLabelTextView = view.findViewById(R.id.hotel_recap_price_label_text_view);
         TextView hotelRecapPriceValueView = view.findViewById(R.id.hotel_recap_price_value_text_view);
 
-        TextView hotelRecapAvailabilityLabelTextView = view.findViewById(R.id.hotel_recap_availability_label_text_view);
-        TextView hotelRecapAvailabilityValueTextView = view.findViewById(R.id.hotel_recap_availability_value_text_view);
+        TextView hotelRecapCheckinLabelTextView = view.findViewById(R.id.hotel_recap_checkin_label_text_view);
+        TextView hotelRecapCheckinValueTextView = view.findViewById(R.id.hotel_recap_checkin_value_text_view);
+
+        TextView hotelRecapCheckoutLabelTextView = view.findViewById(R.id.hotel_recap_checkout_label_text_view);
+        TextView hotelRecapCheckoutValueTextView = view.findViewById(R.id.hotel_recap_checkout_value_text_view);
 
         send = view.findViewById(R.id.send);
         hotelName = getArguments().getString("hotel name");
@@ -75,10 +78,13 @@ public class HotelGuestDetailsFragment extends Fragment  {
 
         hotelRecapLabelTextView.setText("Hotel Name:");
         hotelRecapValueTextView.setText(hotelName);
-        hotelRecapPriceLabelTextView.setText("Price");
+        hotelRecapPriceLabelTextView.setText("Price:");
         hotelRecapPriceValueView.setText(hotelPrice);
-        hotelRecapAvailabilityLabelTextView.setText("Availability");
-        hotelRecapAvailabilityValueTextView.setText(hotelAvailability);
+        hotelRecapCheckinLabelTextView.setText("Checkin:");
+        hotelRecapCheckoutLabelTextView.setText("Checkout:");
+        sharedPreferences = getActivity().getSharedPreferences(myPreference, Context.MODE_PRIVATE);
+        hotelRecapCheckinValueTextView.setText(sharedPreferences.getString(checkIn, ""));
+        hotelRecapCheckoutValueTextView.setText(sharedPreferences.getString(checkOut, ""));
         setupRecyclerView();
 
         send.setOnClickListener(new View.OnClickListener() {

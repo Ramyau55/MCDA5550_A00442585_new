@@ -76,7 +76,7 @@
                 android:layout_marginBottom="20dp"
                 android:textColor="@color/black"/>
             <TextView
-                android:id="@+id/hotel_recap_availability_label_text_view"
+                android:id="@+id/hotel_recap_checkin_label_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="@id/hotel_recap_price_label_text_view"
@@ -84,18 +84,18 @@
                 android:layout_marginTop="20dp"
                 android:textSize="20sp"
                 android:gravity="center_horizontal"
-                tools:text = "Availability"
+                tools:text = "Checkin"
                 android:fontFamily="sans-serif"
                 android:layout_marginLeft="20dp"
                 android:layout_marginBottom="20dp"
                 android:paddingTop="20dp"
                 android:textColor="@color/black"/>
             <TextView
-                android:id="@+id/hotel_recap_availability_value_text_view"
+                android:id="@+id/hotel_recap_checkin_value_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="@id/hotel_recap_price_label_text_view"
-                app:layout_constraintStart_toEndOf="@id/hotel_recap_availability_label_text_view"
+                app:layout_constraintStart_toEndOf="@id/hotel_recap_checkin_label_text_view"
                 android:layout_marginTop="20dp"
                 android:textSize="20sp"
                 android:gravity="center_horizontal"
@@ -105,12 +105,41 @@
                 android:layout_marginBottom="20dp"
                 android:paddingTop="20dp"
                 android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/hotel_recap_checkout_label_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/hotel_recap_checkin_label_text_view"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="20dp"
+                android:textSize="20sp"
+                android:gravity="center_horizontal"
+                tools:text = "Checkin"
+                android:fontFamily="sans-serif"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
+                android:paddingTop="20dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/hotel_recap_checkout_value_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/hotel_recap_checkin_label_text_view"
+                app:layout_constraintStart_toEndOf="@id/hotel_recap_checkout_label_text_view"
+                android:layout_marginTop="20dp"
+                android:textSize="20sp"
+                android:gravity="center_horizontal"
+                tools:text = "Availability Value"
+                android:fontFamily="sans-serif"
+                android:layout_marginLeft="20dp"
+                android:paddingTop="20dp"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:id="@+id/hotel_recap_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/hotel_recap_availability_label_text_view"
+                app:layout_constraintTop_toBottomOf="@id/hotel_recap_checkout_label_text_view"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="20dp"
@@ -120,6 +149,8 @@
                 tools:text = "Sample text"
                 android:fontFamily="sans-serif"
                 android:textColor="@color/black"/>
+
+
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/guest_list_recyclerView"
